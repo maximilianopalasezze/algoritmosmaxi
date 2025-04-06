@@ -14,9 +14,9 @@ public static void main(String[] args) throws InterruptedException {
                         System.out.println("\n   MENU PRINCIPAL    ");
                         System.out.println("1. Comprar entrada");
                         System.out.println("2. Salir");
-                        System.out.print("Seleccione una opciÛn para continuar: ");
+                        System.out.print("Seleccione una opci√≥n para continuar: ");
                 
-                        String opcion = scanner.nextLine(); // Lee la opciÛn del usuario
+                        String opcion = scanner.nextLine(); // Lee la opci√≥n del usuario
                 
                    switch (opcion) {
                     case "1" -> {
@@ -35,9 +35,9 @@ public static void main(String[] args) throws InterruptedException {
                         System.out.println("3. Platea Alta ($9000)");
                         System.out.println("4. Palcos ($6500)");
                         
-                        String seleccion; // almacena el n˙mero de entrada seleccionada
-                    boolean EntradaValida; // verificar si se elije una entrada valida
-                    int precioBase = 0; // precio original segun tipo de entrada
+                        String seleccion; 
+                    boolean EntradaValida; 
+                    int precioBase = 0; 
                         String tipoEntrada = "";
                         
                     do {
@@ -63,7 +63,7 @@ public static void main(String[] args) throws InterruptedException {
                         tipoEntrada = "Palcos";
                                 }
                     default -> {
-                        System.out.println("Entrada no v·lida. Intente nuevamente.");
+                        System.out.println("Entrada no v√°lida. Intente nuevamente.");
                         EntradaValida = false;
                                 }
                             }
@@ -73,14 +73,14 @@ public static void main(String[] args) throws InterruptedException {
                     do {
                         System.out.print("Ingrese su edad: ");
                     while (!scanner.hasNextInt()) {
-                        System.out.println("Caracter no v·lido. Intente nuevamente.");
+                        System.out.println("Caracter no v√°lido. Intente nuevamente.");
                         scanner.next();
                         System.out.print("Ingrese su edad: ");
                             }
                         edad = scanner.nextInt();
-                        scanner.nextLine(); // limpiar buffer
+                        scanner.nextLine(); 
                   } while (edad <= 0);
-                         // Calcula el descuento seg˙n la edad
+                         // Calcula el descuento seg√∫n la edad
                     double descuento = 0;
                     if (edad <= 25) {
                         descuento = 0.10;
@@ -103,7 +103,7 @@ public static void main(String[] args) throws InterruptedException {
                          String respuesta = "";
                     boolean respuestaValida = false;
                     do {
-                        System.out.print("øDesea realizar otra compra? (si/no): ");
+                        System.out.print("¬øDesea realizar otra compra? (si/no): ");
                         respuesta = scanner.nextLine().trim().toLowerCase();
 
                     if (respuesta.equals("si")) {
@@ -114,14 +114,14 @@ public static void main(String[] args) throws InterruptedException {
                         salir = true;
                             
                   } else {
-                        System.out.println("Respuesta no v·lida. escribe 'si'  o 'no' para continuar.");
+                        System.out.println("Respuesta no v√°lida. escribe 'si'  o 'no' para continuar.");
                         }
                   } while (!respuestaValida);
 
                     break;
                     } 
                     case "2" -> salir = true;
-                    default -> System.out.println("OpciÛn no v·lida. Intentelo nuevamente.");
+                    default -> System.out.println("Opci√≥n no v√°lida. Intentelo nuevamente.");
                 }
                   } while (!salir);
                        System.out.println("calculando total de compra un momento por favor ");
@@ -129,7 +129,7 @@ public static void main(String[] args) throws InterruptedException {
             
                        System.out.println("Total acumulado de todas las compras: $" + totalAcumulado);
             
-                       System.out.println("Gracias por su compra. °Disfrute la funcion!");
+                       System.out.println("Gracias por su compra. ¬°Disfrute la funcion!");
         }
     }
 }
