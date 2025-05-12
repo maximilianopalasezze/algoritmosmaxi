@@ -16,7 +16,7 @@ class Entrada {
    double precioFinal; // precio con descuentos aplicados
  //prueba de optimizacion para verificar datos que llegan al crear una entrada
 public Entrada(String nombre, int edad, String genero, boolean estudiante, String tipoAsiento, int numeroAsiento) {
-  this.id = contador++; // se asigna el ID autom·ticamente
+  this.id = contador++; // se asigna el ID autom√°ticamente
   this.nombre = nombre;
   this.edad = edad;
   this.genero = genero;
@@ -36,11 +36,11 @@ private double obtenerPrecio(String tipo) {
    default -> 0;
 };
 }
-// prueba de optimizacion para validar quÈ descuento se aplica
+// prueba de optimizacion para validar qu√© descuento se aplica
 private double calcularPrecioFinal() {
   double total = precioBase;
    if (edad <= 12) {
-    descuentosAplicados.add("NiÒo (10%)");
+    descuentosAplicados.add("Ni√±o (10%)");
     total -= precioBase * 0.10;
 }  else if (edad >= 65) {
     descuentosAplicados.add("Tercera Edad (25%)");
@@ -59,9 +59,9 @@ public void imprimirBoleta() {
         System.out.println("---- Boleta ----");
         System.out.println("Nombre: " + nombre);
         System.out.println("Edad: " + edad);
-        System.out.println("GÈnero: " + (genero.equals("2") ? "Mujer" : "Hombre"));
+        System.out.println("G√©nero: " + (genero.equals("2") ? "Mujer" : "Hombre"));
         System.out.println("Tipo de asiento: " + tipoAsiento);
-        System.out.println("N˙mero de asiento: " + numeroAsiento);
+        System.out.println("N√∫mero de asiento: " + numeroAsiento);
         System.out.printf("Precio base: $%.0f\n", precioBase);
    if (!descuentosAplicados.isEmpty()) {
         System.out.println("Descuento aplicado: " + String.join(", ", descuentosAplicados));
@@ -70,7 +70,7 @@ public void imprimirBoleta() {
         }
         System.out.printf("Precio final: $%.0f\n", precioFinal);
         System.out.println("-----------------------------------------");
-        System.out.println("Gracias por su compra. Disfrute la funciÛn.");
+        System.out.println("Gracias por su compra. Disfrute la funci√≥n.");
         System.out.println("-----------------------------------------\n");
 }
 }
@@ -87,18 +87,18 @@ public static void main(String[] args) {
   int opcion = 0;
         System.out.println("Bienvenido al teatro moro");
   while (true) {
-        System.out.println("\n  MEN⁄ DE OPCIONES");
+        System.out.println("\n  MEN√ö DE OPCIONES");
         System.out.println("1. Venta de entradas");
         System.out.println("2. Ver entradas vendidas");
         System.out.println("3. Ver asientos disponibles");
         System.out.println("4. Eliminar entrada por ID");
         System.out.println("5. Mostrar resumen total de ventas");
         System.out.println("6. Salir");
-        System.out.print("Elige una opciÛn: ");
+        System.out.print("Elige una opci√≥n: ");
   try {
         opcion = Integer.parseInt(scanner.nextLine());
 } catch (NumberFormatException e) {
-        System.out.println("OpciÛn no v·lida. Intenta nuevamente.");
+        System.out.println("Opci√≥n no v√°lida. Intenta nuevamente.");
   continue;
 }
   switch (opcion) {
@@ -111,11 +111,11 @@ public static void main(String[] args) {
         System.out.println("Gracias por su compra.\nDisfrute la funcion");
    return;
 }
-   default -> System.out.println("OpciÛn no v·lida. Intenta nuevamente.");
+   default -> System.out.println("Opci√≥n no v√°lida. Intenta nuevamente.");
 }
 }
 }
-// prueba de optimizacion para revisar flujo de validaciones y construcciÛn de entrada
+// prueba de optimizacion para revisar flujo de validaciones y construcci√≥n de entrada
 public static void venderEntrada() {
   String nombre;
   do {
@@ -123,8 +123,8 @@ public static void venderEntrada() {
         nombre = scanner.nextLine().trim();
   if (nombre.isEmpty()) {
         System.out.println("debe ingresar un nombre para continuar.");
-} else if (!nombre.matches("[a-zA-Z·ÈÌÛ˙¡…Õ”⁄Ò— ]+")) {
-        System.out.println("Nombre no v·lido.Intente nuevamente");
+} else if (!nombre.matches("[a-zA-Z√°√©√≠√≥√∫√Å√â√ç√ì√ö√±√ë ]+")) {
+        System.out.println("Nombre no v√°lido.Intente nuevamente");
         nombre = "";
 }
 } while (nombre.isEmpty());
@@ -134,48 +134,48 @@ public static void venderEntrada() {
         System.out.print("Ingrese edad: ");
         edad = Integer.parseInt(scanner.nextLine());
   if (edad >= 0 && edad <= 100) break;
-  else  System.out.println("Edad no v·lida. Intente nuevamente.");
+  else  System.out.println("Edad no v√°lida. Intente nuevamente.");
 } catch (NumberFormatException e) {
-        System.out.println("Dato no v·lido. Debe ingresar su edad en n˙mero.");
+        System.out.println("Dato no v√°lido. Debe ingresar su edad en n√∫mero.");
 }
 }
   String genero = "";
   while (true) {
   try {
-        System.out.print("Es usted: \n(1)Hombre \n(2)Mujer\nIngrese opciÛn: ");
+        System.out.print("Es usted: \n(1)Hombre \n(2)Mujer\nIngrese opci√≥n: ");
         genero = scanner.nextLine();
   if (genero.equals("1") || genero.equals("2")) break;
-  else  System.out.println("OpciÛn no v·lida. Intente nuevamente.");
+  else  System.out.println("Opci√≥n no v√°lida. Intente nuevamente.");
 } catch (Exception e) {
-        System.out.println("Entrada no v·lida. Intente nuevamente.");
+        System.out.println("Entrada no v√°lida. Intente nuevamente.");
 }
 }
   boolean estudiante = false;
   if (edad > 12 && edad < 65) {
         String respuesta;
   while (true) {
-        System.out.print("øEs estudiante? (si/no): ");
+        System.out.print("¬øEs estudiante? (si/no): ");
         respuesta = scanner.nextLine().toLowerCase();
   if (respuesta.equals("si") || respuesta.equals("no")) {
         estudiante = respuesta.equals("si");
   break;
 } else {
-        System.out.println("Entrada inv·lida. Escriba 'si' o 'no'.");
+        System.out.println("Entrada inv√°lida. Escriba 'si' o 'no'.");
 }
 }
 }
 
   if (genero.equals("2") || estudiante) {
-        System.out.println("No olvides de traer tu carnet para validar tus descuentos.");
+        System.out.println("No olvides de traer tu carnet para validar tu descuento!.");
 }
   String tipoAsiento;
  int numeroAsiento;
 
   while (true) {
-        tipoAsiento = elegirTipoAsiento(); // nueva funciÛn
+        tipoAsiento = elegirTipoAsiento(); // nueva funci√≥n
         numeroAsiento = seleccionarAsiento(tipoAsiento);
   if    (numeroAsiento == -1) {
-        System.out.println("SecciÛn sin asientos disponibles. Por favor, elija otra secciÛn.");
+        System.out.println("Secci√≥n sin asientos disponibles. Por favor, elija otra secci√≥n.");
 } else {
   break;
 }
@@ -185,7 +185,7 @@ public static void venderEntrada() {
         entradas.add(entrada);
         System.out.println("El ID de esta entrada es: " + entrada.id);
    if (!entrada.descuentosAplicados.isEmpty()) {
-        System.out.println("No olvides de traer tu carnet para validar tus descuentos.");
+        System.out.println("No olvides de traer tu carnet para validar tu descuento!.");
 }
         entrada.imprimirBoleta();
 }
@@ -198,8 +198,8 @@ public static String elegirTipoAsiento() {
         System.out.println("2. Platea Baja ($15000)");
         System.out.println("3. Platea Alta ($18000)");
         System.out.println("4. Palco ($13000)");
-        System.out.println("5. GalerÌa ($10000)");
-        System.out.print("Ingrese n˙mero: ");
+        System.out.println("5. Galer√≠a ($10000)");
+        System.out.print("Ingrese n√∫mero: ");
         String opcion = scanner.nextLine();    
   switch (opcion) {
     case "1" -> tipoAsiento = "vip";
@@ -208,18 +208,18 @@ public static String elegirTipoAsiento() {
     case "4" -> tipoAsiento = "palco";
     case "5" -> tipoAsiento = "galeria";
     default -> {
-        System.out.println("OpciÛn no v·lida. Intente nuevamente.");
+        System.out.println("Opci√≥n no v√°lida. Intente nuevamente.");
     continue;
 }
 }
   break;
 } catch (Exception e) {
-        System.out.println("Entrada no v·lida. Intente nuevamente.");
+        System.out.println("Entrada no v√°lida. Intente nuevamente.");
 }
 }
   return tipoAsiento;
 }
-// prueba de optimizacion para validar la lÛgica de asignaciÛn de asientos disponibles
+// prueba de optimizacion para validar la l√≥gica de asignaci√≥n de asientos disponibles
 public static int seleccionarAsiento(String tipo) {
    boolean[] fila = switch (tipo) {
     case "vip" -> vip;
@@ -235,16 +235,16 @@ public static int seleccionarAsiento(String tipo) {
    for (int i = 0; i < fila.length; i++) {
         System.out.print(fila[i] ? "[X] " : "[" + (i + 1) + "] ");
 }
-        System.out.print("\nSeleccione un n˙mero de asiento (1 a 10):");
+        System.out.print("\nSeleccione un n√∫mero de asiento (1 a 10):");
    int asiento;
    try {
         asiento = Integer.parseInt(scanner.nextLine());
 }  catch (Exception e) {
-        System.out.println("Entrada inv·lida.");
+        System.out.println("Entrada inv√°lida.");
    continue;
 }
-   if (asiento < 1 || asiento > 10) System.out.println("Fuera de rango.");
-   else if (fila[asiento - 1]) System.out.println("Asiento ocupado.");
+   if (asiento < 1 || asiento > 10) System.out.println("Fuera de rango.Seleccione un asiento disponible");
+   else if (fila[asiento - 1]) System.out.println("Asiento ocupado.Seleccione un asiento disponible");
    else {
         fila[asiento - 1] = true;
    return asiento;
@@ -260,7 +260,7 @@ public static void mostrarAsientosDisponibles() {
         mostrarFila("Platea Baja", plateaBaja);
         mostrarFila("Platea Alta", plateaAlta);
         mostrarFila("Palco", palco);
-        mostrarFila("GalerÌa", galeria);
+        mostrarFila("Galer√≠a", galeria);
 }
 public static void mostrarFila(String nombre, boolean[] fila) {
         System.out.print(nombre + ": ");
@@ -269,14 +269,14 @@ public static void mostrarFila(String nombre, boolean[] fila) {
 }
         System.out.println();
 }
-// prueba de optimizacion para comprobar el comportamiento cuando se ingresa un ID v·lido o inv·lido
+// prueba de optimizacion para comprobar el comportamiento cuando se ingresa un ID v√°lido o inv√°lido
 public static void eliminarEntradaPorId() {
         System.out.print("Ingrese el ID de la entrada a eliminar: ");
    int idEliminar;
    try {
        idEliminar = Integer.parseInt(scanner.nextLine());
 }  catch (Exception e) {
-        System.out.println("ID no v·lido.");
+        System.out.println("ID no v√°lido.");
    return;
 }
    boolean eliminado = false;
@@ -291,7 +291,7 @@ public static void eliminarEntradaPorId() {
 }
 }
     if (!eliminado) {
-        System.out.println("No se encontrÛ una entrada con ese ID.");
+        System.out.println("No se encontr√≥ una entrada con ese ID.");
 }
 }
 // Muestra resumen total recaudado por la venta de entradas
